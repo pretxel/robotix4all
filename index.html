@@ -474,6 +474,12 @@ function initialize() {
   var mapOptions = {
     zoom: 6
   };
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: map.getCenter()
+  });
+
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
@@ -487,6 +493,11 @@ function initialize() {
         map: map,
         position: pos,
         content: 'Location found using HTML5.'
+      });
+
+      infowindow.setContent('<b>القاهرة</b>');
+      google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(map, marker);
       });
 
       map.setCenter(pos);
