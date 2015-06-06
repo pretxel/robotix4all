@@ -475,13 +475,15 @@ function initialize() {
     zoom: 6
   };
 
+  
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
   var marker = new google.maps.Marker({
     map: map,
     position: map.getCenter()
   });
 
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
