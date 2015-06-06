@@ -496,6 +496,15 @@ function initialize() {
         content: 'Location found using HTML5.'
       });
 
+
+       var myLatLng = new google.maps.LatLng(position.coords.latitude+10, position.coords.longitude +10);
+        var beachMarker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          icon: image
+      });   
+
+
       map.setCenter(pos);
     }, function() {
       handleNoGeolocation(true);
