@@ -90,6 +90,10 @@
     .wide img {
       width:100%;
     }
+
+    div#startupbus_banner img{
+        width: 100%;
+    }
     
 </style>
         <header>
@@ -497,9 +501,16 @@ function initialize() {
       // });
 
 
-       var myLatLng = new google.maps.LatLng(position.coords.latitude+10, position.coords.longitude +10);
-        var beachMarker = new google.maps.Marker({
+      var myLatLng = new google.maps.LatLng(position.coords.latitude+10, position.coords.longitude +10);
+      var myLatLng2 = new google.maps.LatLng(position.coords.latitude+5, position.coords.longitude -5);
+      
+      var beachMarker = new google.maps.Marker({
           position: myLatLng,
+          map: map
+      }); 
+
+      var beachMarker = new google.maps.Marker({
+          position: myLatLng2,
           map: map
       });   
 
