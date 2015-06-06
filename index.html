@@ -508,7 +508,7 @@ var markers = [];
 
       clearMarkers();
       for (var i = 0; i < neighborhoods.length; i++) {
-        addMarkerWithTimeout(neighborhoods[i], i * 200);
+        addMarkerWithTimeout(neighborhoods[i], i * 200, map);
       }
 
       // infowindow.setContent('<b>Instructor</b>');
@@ -526,7 +526,7 @@ var markers = [];
   }
 }
 
-function addMarkerWithTimeout(position, timeout) {
+function addMarkerWithTimeout(position, timeout, map) {
   window.setTimeout(function() {
     markers.push(new google.maps.Marker({
       position: position,
