@@ -9,7 +9,7 @@
         <meta name="keywords" content="educación, conocimiento, knowledge, robótica, children, niños, teaching, learning, robotix, learning, model, education, disruptive, startupbus, schedule, match, student, location, business, social, entrepreneurship, subject, platform, mexican, entrepreneurs, nashville">
 
 
-        <title>Robotix4all</title>
+        <title>razLy</title>
         <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom CSS -->
@@ -31,6 +31,24 @@
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVstw2TPLD-F45vkEr6L-1RH6duhefnI8">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = { 
+          center: { lat: 19.414563 lng: 99.161808},
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
     </head>
 
    
@@ -49,7 +67,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#page-top">#ROBOTIX4ALL</a>
+                    <a class="navbar-brand" href="#page-top"> <img class="img-responsive" src="img/logo.png" alt="" style="width:100px">    </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <!-- /.navbar-collapse -->
@@ -74,8 +92,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                    <img class="img-responsive" style="width:300px;"src="img/Logotipo-RobotiX.png" alt="">
-                        presenta:
+                    
                         <img class="img-responsive" src="img/logo.png" alt="">
                         <div class="intro-text">
                             
@@ -120,9 +137,9 @@
                     
                     <div class="col-lg-12">
                         <p class="text-center">&nbsp;<!--RobotiX4All es una solución conecta a los elementos más importantes en la educación: el instructor, al alumno, locación, metodología de enseñanza y material didáctico con la finalidad de generar una herramienta que potencialice el aprendizaje de los estudiantes de acuerdo a sus necesidades de estudio.-->
-                            Con más de 10 años de experiencia, en RobotiX impartimos las mejores clases de robótica para niños de primaria y secundaria en México. 
+                            Impartimos las mejores clases vespertinas para niños de primaria y secundaria en México, enseñando los temas más relevantes de las tendencias tecnológicas.
                         <br></p>
-                        <p class="text-center">Ahora con RobotiX4All llegamos a muchos más lugares. ¡Aquí podrás ver si hay clases cerca de donde tu vives!</p>
+                        <p class="text-center">¡Aprende Robótica, Emprendimiento y Programación!</p>
                     </div>
                     <div class="col-lg-8 col-lg-offset-2 text-center">
                         <a href="#contact" class="btn btn-lg btn-outline">¡Quiero aplicar!</a>
@@ -162,7 +179,7 @@
                             </div>
                             <img src="img/portfolio/alumnos.jpg" class="img-responsive" alt="">
                         </a>
-                        <h4 class="text-center">Aprender Robótica</h4>
+                        <h4 class="text-center">Quiero Aprender</h4>
                     </div>
                     <div class="col-sm-4 portfolio-item">
                         <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
@@ -174,12 +191,13 @@
                             <img src="img/portfolio/escuelas.jpg" class="img-responsive" alt="">
                         </a>
                         <h4 class="text-center">
-                        Robótica en mi escuela o Espacio  </h4>
+                        Razly en mi escuela o Espacio  </h4>
                     </div>
                 </div>
             </div>
         </section>
         <!-- About Section -->
+        <div id="map-canvas" style="height: 300px;"></div>
         <!-- Contact Section -->
         <section id="contact">
             <div class="container">
@@ -195,6 +213,41 @@
                         
                     </div>
                 </div>
+            </div>
+           <!--  <button type="submit" class="btn btn-success btn-lg">Enviar</button> -->
+        </section>
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 text-center">
+                        <img src="img/ALIX.jpg" alt="..." class="img-circle" style="max-width:100%">
+                        <h4>Alix Gallardo</h4>
+                        <h5>Marketing</h5>
+                        
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <img src="img/IGNA.jpg" alt="..." class="img-circle" style="max-width:100%">
+                        <h4>Igna Tovar</h4>
+                        <h5>Business Dev</h5>
+
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <img src="img/PREZ.jpg" alt="..." class="img-circle" style="max-width:100%">
+                        <h4>Rick Velazquez</h4>
+                        <h5>Front-end</h5>
+
+                        
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <img src="img/RICK.jpg" alt="..." class="img-circle" style="max-width:100%">
+                        <h4>Edsel Serrano</h4>
+                        <h5>Back-end</h5>
+
+                        
+                    </div>
+                </div>
+                
+     
             </div>
            <!--  <button type="submit" class="btn btn-success btn-lg">Enviar</button> -->
         </section>
@@ -234,7 +287,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            Copyright © Robotix4All 2015
+                            Copyright © razly 2015
 </div>
                     </div>
                 </div>
@@ -305,15 +358,15 @@
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
-                                <h2>Se un instructor(a) de RobotiX4All</h2>
+                                <h2>Se un instructor(a) de razly</h2>
                                 <hr class="star-primary">
                                 <img src="img/portfolio/instructors.jpg" class="img-responsive img-centered" alt="">
                                 <p>Si cumples con los siguientes requisitos, mándanos tus datos al final de esta página y forma parte de RobotiX. </p>
                                 <ul class=" item-details">
-                                    <li>Estudias una ingeniería.
+                                    <li>Estudias o acabas de estudiar tu carrera.
                                         
                                     </li>
-                                   <li>Vivir en cualquier estado de la República Mexicana.
+                                   <li>Vives en cualquier estado de la República Mexicana.
                                         
                                     </li>
                                     <li>Ser un apasioando de la educación.
@@ -344,13 +397,10 @@
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
-                                <h2>Aprende Robótica</h2>
+                                <h2>Aprender con Razly</h2>
                                 <hr class="star-primary">
                                 <img src="img/portfolio/alumnos.jpg" class="img-responsive img-centered" alt="">
-                                <p>Llevamos 10 años mejorando nuestro modelo educativo que cuenta con 11 niveles de desarrollo.
-                                Nuestra metodología está desarrollada para niños y jóvenes que se encuentren entre los 6 y 16 años.
-                                Para saber más, déjanos tus datos al final de esta página y te enviaremos un correo con toda la información
-                                relevante.</p>
+                                <p>Actualmente impartimos clases de robótica, emprendimiento y programación. Aprenderás divirtíendote y armando proyectos increíbles.</p>
 
                                 <button type="button" class="btn btn-default" data-dismiss="modal" href="#contact">
                                     <i class="fa fa-times"></i> Close
@@ -373,10 +423,10 @@
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
-                                <h2>RobotiX4All en tu escuela</h2>
+                                <h2>Razly en tu escuela</h2>
                                 <hr class="star-primary">
                                 <img src="img/portfolio/escuelas.jpg" class="img-responsive img-centered" alt="">
-                                <p>Puedes empezar a ofrecer clases de robótica en tu escuela! Si cuentan con computadoras para que los chicos programen y tienes un horario disponible, estamos listos para enseñar en tu espacio! Ponte en contacto con nosotros.</p>
+                                <p>Puedes empezar a ofrecer clases de Tecnología e Innovación en tu espacio o escuela! Si cuentan con computadoras para que los chicos programen y tienes un horario disponible, estamos listos para enseñar en tu espacio! Ponte en contacto con nosotros.</p>
                 
                                 <button type="button" class="btn btn-default" data-dismiss="modal">
                                     <i class="fa fa-times"></i> Close
@@ -410,6 +460,27 @@
 
   ga('create', 'UA-63796715-1', 'auto');
   ga('send', 'pageview');
+  (function ($) {
+  $(document).ready(function(){
+
+    // hide .navbar first
+    $(".navbar").hide();
+
+    // fade in .navbar
+    $(function () {
+        $(window).scroll(function () {
+
+                 // set distance user needs to scroll before we start fadeIn
+            if ($(this).scrollTop() > 100) {
+                $('.navbar').fadeIn();
+            } else {
+                $('.navbar').fadeOut();
+            }
+        });
+    });
+
+});
+  }(jQuery));
 
 </script>
 
