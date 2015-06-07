@@ -2,6 +2,37 @@
 <html lang="en">
 
 <head>
+    <style>
+        #div1 {
+            width: 350px;
+            height: 470px;
+            padding: 10px;
+            border: 8px solid #aaaaaa;
+            border-radius: 10%;
+        }
+
+        #drag1,#drag2,#drag3,#drag4,#drag5,#drag6{
+            position: relative;
+            font-size: 200%
+        }
+
+    </style>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        function drop(ev) {
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+            ev.preventDefault();
+        }
+    </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,14 +78,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                 <img class="img-responsive" src="logo.png" alt="" style="width:105px; margin-left: 4em">
+                <img class="img-responsive" src="logo.png" alt="" style="width:105px; margin-left: 4em">
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-caret-down">Messages</i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
@@ -157,22 +188,16 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> MIS CLASES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Por clase</a>
-                                </li>
-                                <li>
-                                    <a href="control.html">Control de clases</a>
+                                    <a href="control.html">Control</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> MATERIAL <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> CURSOS DISPONIBLES <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Status (Inventario)</a>
-                                </li>
-                                <li>
-                                    <a href="#">Solicitar (Pagar)</a>
+                                    <a href="select.html">Selección</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -185,34 +210,44 @@
         </nav>
 
         <div id="page-wrapper">
-            
-                <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Mobile</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td class="user-name">gary coleman</td><td class="user-email">gary.coleman21@example.com</td><td class="user-phone">(398)-332-5385</td><td class="user-mobile">(888)-677-3719</td></tr>
-                            <tr><td class="user-name">rose parker</td><td class="user-email">rose.parker16@example.com</td><td class="user-phone">(293)-873-2247</td><td class="user-mobile">(216)-889-4933</td></tr>
-                            <tr><td class="user-name">chloe nelson</td><td class="user-email">chloe.nelson18@example.com</td><td class="user-phone">(957)-213-3499</td><td class="user-mobile">(207)-516-4474</td></tr>
-                            <tr><td class="user-name">eric bell</td><td class="user-email">eric.bell16@example.com</td><td class="user-phone">(897)-762-9782</td><td class="user-mobile">(565)-627-3002</td></tr>
-                            <tr><td class="user-name">douglas hayes</td><td class="user-email">douglas.hayes92@example.com</td><td class="user-phone">(231)-391-6269</td><td class="user-mobile">(790)-838-2130</td></tr>
-                        </tbody>
-                    </table>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Selección de cursos</h1>
+                </div>
+
+                <h3>Cursos actuales que puedes ofrecer según tus aptitudes.</h3>
+
+                <br><br>
+                
             <!-- /.row -->
-        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <br><br>
+                <div class="col-md-6">
+                    <p id="drag1" draggable="true" ondragstart="drag(event)">Arduino.</p>
+                    <p id="drag2" draggable="true" ondragstart="drag(event)">Ensamblador.</p>
+                    <p id="drag3" draggable="true" ondragstart="drag(event)">Programación.</p>
+                    <p id="drag4" draggable="true" ondragstart="drag(event)">Diseño.</p>
+                    <p id="drag5" draggable="true" ondragstart="drag(event)">Labview.</p>
+                    <p id="drag6" draggable="true" ondragstart="drag(event)">Hc-05.</p>
+                </div>
+            </div>
+            
+                <br>
+            <!-- /.row -->
+            </div>
+
+
+                    
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
+
     <!-- jQuery -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
-        <script src="../js/jquery.stickyheader.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
