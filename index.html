@@ -465,7 +465,7 @@
         <!-- <script src="js/contact_me.js"></script> -->
         <!-- Custom Theme JavaScript -->
         <script src="js/freelancer.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+       
 
 
         <script>
@@ -477,71 +477,7 @@
   ga('create', 'UA-63796715-2', 'auto');
   ga('send', 'pageview');
 
-  var map;
-
-function initialize() {
-  var mapOptions = {
-    zoom: 6
-  };
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-
-  // Try HTML5 geolocation
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
-
-      // var infowindow = new google.maps.InfoWindow({
-      //   map: map,
-      //   position: pos,
-      //   content: 'Location found using HTML5.'
-      // });
-
-
-      var myLatLng = new google.maps.LatLng(position.coords.latitude+10, position.coords.longitude +10);
-      var myLatLng2 = new google.maps.LatLng(position.coords.latitude+5, position.coords.longitude -5);
-      
-      var beachMarker = new google.maps.Marker({
-          position: myLatLng,
-          map: map
-      }); 
-
-      var beachMarker = new google.maps.Marker({
-          position: myLatLng2,
-          map: map
-      });   
-
-
-      map.setCenter(pos);
-    }, function() {
-      handleNoGeolocation(true);
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleNoGeolocation(false);
-  }
-}
-
-function handleNoGeolocation(errorFlag) {
-  if (errorFlag) {
-    var content = 'Error: The Geolocation service failed.';
-  } else {
-    var content = 'Error: Your browser doesn\'t support geolocation.';
-  }
-
-  var options = {
-    map: map,
-    position: new google.maps.LatLng(60, 105),
-    content: content
-  };
-
-  var infowindow = new google.maps.InfoWindow(options);
-  map.setCenter(options.position);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
+  
 
   (function ($) {
   $(document).ready(function(){
